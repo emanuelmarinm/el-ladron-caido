@@ -5,123 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Ladrón Caído</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      background: #0a0a0a;
-      color: #eeeeee;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.1rem;
-      line-height: 1.8;
+      background: #111111;
+      color: #cccccc;
+      font-family: Arial, sans-serif;
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
     }
 
-    header {
-      text-align: center;
-      padding: 3rem 1.5rem 2rem;
-      border-bottom: 2px solid #d9a21b;
-    }
-
-    header h1 {
-      font-size: clamp(2.2rem, 6vw, 3.6rem);
+    h1 {
+      font-size: 1.8rem;
       color: #ffffff;
-      letter-spacing: 0.02em;
-      line-height: 1.2;
+      margin-bottom: 5px;
     }
 
-    header p {
-      margin-top: 0.8rem;
-      color: #d9a21b;
-      font-size: 1rem;
-    }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
+    .meta {
+      font-size: 0.85rem;
+      color: #777777;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #222222;
+      padding-bottom: 12px;
     }
 
     h2 {
-      color: #d9a21b;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #333333;
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-top: 30px;
+      margin-bottom: 8px;
     }
 
-    figure img {
-      display: block;
-      width: 100%;
-      max-width: 480px;
+    img {
+      max-width: 100%;
       height: auto;
-      margin: 0 auto;
-      border: 2px solid #333333;
-    }
-
-    figcaption {
-      text-align: center;
-      margin-top: 0.6rem;
-      font-size: 0.9rem;
-      color: #999999;
+      border: 1px solid #333333;
+      display: block;
+      margin: 10px 0;
     }
 
     audio {
-      display: block;
       width: 100%;
-      margin-top: 0.5rem;
-    }
-
-    .sinopsis p {
-      color: #cccccc;
-      margin-bottom: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 2rem 1rem 1.5rem;
-      }
-
-      main {
-        padding: 1.5rem 1rem 2rem;
-      }
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>El Ladrón Caído</h1>
-    <p>Micronovela y crónica · Colegio Ramón B. Jimeno · Bogotá, Colombia</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>Póster</h2>
-      <figure>
-        <img src="poster.jpeg" alt="Hombre encapuchado de azul en un puente observa a otro tendido en el suelo junto a una reja de alto voltaje, de noche.">
-        <figcaption>Póster de «El ladrón caído»</figcaption>
-      </figure>
-    </section>
+  <h1>El Ladrón Caído</h1>
+  <div class="meta">Colegio Ramón B. Jimeno • Grado 8° • Bogotá, Colombia</div>
 
-    <section>
-      <h2>Crónica en audio</h2>
-      <audio controls preload="metadata">
-        <source src="audio/cronica.mp3" type="audio/mpeg">
-        Tu navegador no admite la reproducción de audio.
-      </audio>
-    </section>
+  <h2>Póster</h2>
+  <img src="poster.jpeg" alt="Póster de El ladrón caído">
 
-    <section class="sinopsis">
-      <h2>Sinopsis</h2>
-      <p>Pablo cuenta la noche en que el grupo se lanzó a robar una tienda de tecnología en el norte de Bogotá. Las familias necesitaban dinero, así que planearon llevarse doce celulares de alta gama para venderlos. Entraron por una escotilla en lo alto de la pared, bajaron con cuerdas hasta el lugar donde estaban los teléfonos y prepararon una maleta para llevárselos.</p>
-      <p>Pero un sensor activó la alarma, llegaron las sirenas y sus compañeros huyeron, dejándolo atrás. Al subir por la cuerda, el falso techo cedió y Pablo cayó sobre una vitrina de vidrio roto. La policía lo encontró herido, junto a los doce celulares que seguían en la tienda. Ahora le espera una larga condena, aunque reconoce que, tal vez, la merece.</p>
-    </section>
-  </main>
+  <h2>Crónica en audio</h2>
+  <audio controls>
+    <source src="audio/cronica.mp3" type="audio/mpeg">
+    Tu navegador no admite audio.
+  </audio>
+
 </body>
 </html>
