@@ -1,0 +1,389 @@
+:root {
+  --bg: #000000;
+  --bg-cabecera: #07080b;
+  --tarjeta: #0c0e13;
+  --borde: #262b36;
+  --texto: #f4f4f4;
+  --texto-suave: #c4cad6;
+  --ambar: #ffb000;
+  --azul: #2f7bff;
+  --azul-claro: #6ec6ff;
+  --rojo: #ff2e3d;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--texto);
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.8;
+  min-height: 100vh;
+  transition: background 0.6s var(--ease);
+}
+
+/* ---------- Barra de progreso ---------- */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, var(--ambar), var(--rojo));
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ---------- Cabecera de expediente ---------- */
+.cabecera {
+  background: linear-gradient(180deg, var(--bg-cabecera), var(--bg));
+  border-bottom: 2px solid var(--ambar);
+  padding: 2.5rem 1.5rem 3rem;
+  text-align: center;
+  transition: border-color 0.4s var(--ease);
+}
+
+.cabecera-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.sello {
+  background: var(--ambar);
+  color: #000;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+}
+
+.estado strong {
+  color: var(--rojo);
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 700;
+  color: var(--azul-claro);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 18px rgba(110, 198, 255, 0.35);
+}
+
+.subtitulo {
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+  margin: 1rem 0 2rem;
+}
+
+kbd {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.atajo {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- Botón Modo Policial ---------- */
+.btn-emergencia {
+  background: transparent;
+  color: var(--ambar);
+  border: 2px solid var(--ambar);
+  padding: 0.85rem 1.8rem;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-emergencia:hover,
+.btn-emergencia:focus-visible {
+  background: var(--ambar);
+  color: #000;
+  outline: none;
+  box-shadow: 0 0 20px rgba(255, 176, 0, 0.45);
+}
+
+/* ---------- Layout ---------- */
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.2rem;
+}
+
+.ancho-completo {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 900px) {
+  .contenedor {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* ---------- Tarjetas ---------- */
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--azul);
+  border-radius: 6px;
+  padding: 2rem 2.2rem;
+  box-shadow: var(--sombra);
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  border-color: var(--ambar);
+}
+
+.tarjeta h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ambar);
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
+  transition: color 0.4s var(--ease);
+}
+
+/* Póster */
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+}
+
+figcaption {
+  margin-top: 0.8rem;
+  text-align: center;
+  color: var(--texto-suave);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Audio */
+audio {
+  width: 100%;
+  margin-top: 0.5rem;
+  color-scheme: dark;
+}
+
+.nota {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+code {
+  color: var(--ambar);
+  font-family: monospace;
+}
+
+/* Fichas técnicas */
+.ficha {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.9rem 1.5rem;
+  align-items: start;
+}
+
+.ficha dt {
+  color: var(--ambar);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  padding-top: 0.25rem;
+}
+
+.ficha dd {
+  color: var(--texto);
+  border-bottom: 1px solid var(--borde);
+  padding-bottom: 0.7rem;
+}
+
+@media (max-width: 560px) {
+  .ficha {
+    grid-template-columns: 1fr;
+  }
+  .ficha dt {
+    margin-top: 0.6rem;
+  }
+}
+
+/* Narrativa */
+.narrativa h3 {
+  color: var(--azul-claro);
+  font-size: 1.15rem;
+  margin: 2.2rem 0 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.narrativa h3:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.narrativa p {
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+  margin-bottom: 1.4rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Animación de aparición */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease), border-color 0.4s, box-shadow 0.4s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--borde);
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Superposición de alarma ---------- */
+.alarm-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.alarm-overlay::before,
+.alarm-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  opacity: 0;
+}
+
+.alarm-overlay::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 46, 61, 0.22), transparent);
+}
+
+.alarm-overlay::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(47, 123, 255, 0.22), transparent);
+}
+
+/* ---------- MODO POLICIAL / EMERGENCIA ---------- */
+body.modo-emergencia {
+  background: #050000;
+}
+
+body.modo-emergencia .cabecera {
+  border-bottom-color: var(--rojo);
+}
+
+body.modo-emergencia .tarjeta {
+  border-color: var(--rojo);
+  box-shadow: 0 0 26px rgba(255, 46, 61, 0.28);
+}
+
+body.modo-emergencia .tarjeta h2 {
+  color: var(--rojo);
+}
+
+body.modo-emergencia .sello {
+  background: var(--rojo);
+  color: #fff;
+}
+
+body.modo-emergencia .btn-emergencia {
+  color: var(--rojo);
+  border-color: var(--rojo);
+  animation: pulso 1s steps(2, end) infinite;
+}
+
+body.modo-emergencia .btn-emergencia:hover {
+  background: var(--rojo);
+  color: #fff;
+}
+
+body.modo-emergencia .alarm-overlay::before {
+  animation: destelloRojo 1s steps(1) infinite;
+}
+
+body.modo-emergencia .alarm-overlay::after {
+  animation: destelloAzul 1s steps(1) infinite;
+}
+
+body.modo-emergencia figure img {
+  border-color: var(--rojo);
+  box-shadow: 0 0 22px rgba(255, 46, 61, 0.35);
+}
+
+@keyframes destelloRojo {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes destelloAzul {
+  0%, 49% { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes pulso {
+  0%, 100% { box-shadow: 0 0 0 rgba(255, 46, 61, 0); }
+  50% { box-shadow: 0 0 22px rgba(255, 46, 61, 0.6); }
+}
+
+/* ---------- Accesibilidad ---------- */
+:focus-visible {
+  outline: 2px solid var(--azul-claro);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
